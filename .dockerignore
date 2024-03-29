@@ -1,0 +1,30 @@
+# Bu .NET projesinde yaygın olan dosya ve klasörlerin yanı sıra örnekler verilmiştir.
+
+# Bin ve obje klasörleri
+bin/
+obj/
+
+# Derleme sonucu oluşan dosyaları yok say
+*.exe
+*.dll
+*.pdb
+
+# Yedek dosyaları yok say
+*.bak
+
+# VS Code'dan oluşturulan dosyalar
+.vscode/
+
+# Paketleme ve dağıtım dosyaları
+/packages/
+
+# Log dosyaları
+*.log
+
+# Visual Studio tarafından oluşturulan geçici dosyalar
+*.vs/
+
+# Projenin çalışmasını etkilemeyecek dosyaları yok say
+docker-compose.yml
+docker-compose.override.yml
+Dockerfile

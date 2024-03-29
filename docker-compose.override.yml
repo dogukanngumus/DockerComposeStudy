@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  postgres:
+    ports:
+      - 5432:5432
+    environment: 
+      - POSTGRES_PASSWORD=Password.123
+      - POSTGRES_USER=nodsid
+      - POSTGRES_DB=dockerstudydb
+    volumes:
+      - postgres_volume:/var/lib/postgresql
+      
+  microservice1.api:
+    environment:
+        - ASPNETCORE_ENVIRONMENT:${Docker-Environment}
+        - ASPNETCORE_URLS=http://*:80
+    ports:
+        - "5020:80"
+    depends_on:
+        - postgres
+  
+  microservice2.api:
+    environment:
+        - ASPNETCORE_ENVIRONMENT:${Docker-Environment}
+        - ASPNETCORE_URLS=http://*:80
+    ports:
+        - "5010:80"
